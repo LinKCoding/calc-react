@@ -1,6 +1,9 @@
 import React from 'react'
 import ButtonList from './ButtonList'
 import Screen from './Screen'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+
 
 export default class Calculator extends React.Component {
   constructor(props) {
@@ -23,10 +26,14 @@ export default class Calculator extends React.Component {
     const { equation } = this.state
     const result = /\d/.test(equation[equation.length-1]) ? eval(equation) : equation
     return (
-      <React.Fragment>
-        <Screen equation={equation} calculation={result}/>
-        <ButtonList chars={this.state.chars} addToEquation={this.addToEquation}/>
-      </React.Fragment>
+      <Container>
+        <Row>
+          <Screen equation={equation} calculation={result}/>
+        </Row>
+        <Row>
+          <ButtonList chars={this.state.chars} addToEquation={this.addToEquation}/>
+        </Row>
+      </Container>
     )
   }
 }

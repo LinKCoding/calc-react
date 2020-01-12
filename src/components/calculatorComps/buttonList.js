@@ -1,11 +1,18 @@
 import React from 'react'
-import CalcButton from './CalcButton'
+import ButtonRow from './ButtonRow'
+import Col from 'react-bootstrap/Col'
 
 const ButtonList = (props) => {
+  const sortedButtons = []
+  for(let i = 0; i < props.chars.length; i += 4) {
+    sortedButtons.push(props.chars.slice(i, i + 4))
+  }
   return (
-    props.chars.map((char, idx) => {
-      return <CalcButton key={`${char}-${idx}`} char={char} addToEquation={props.addToEquation}/>
-    })
+    <Col>
+      {sortedButtons.map((row, idx) => {
+        return <ButtonRow key={`${row}-${idx}`} row={row} addToEquation={props.addToEquation}/>
+      })}
+    </Col>
   )
 }
 
