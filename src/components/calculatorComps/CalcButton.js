@@ -1,9 +1,13 @@
 import React from 'react'
 
 export default class CalcButton extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
   render() {
     return (
-      <h1>HEEEELLLO </h1>
+      <h1>{this.props.char}</h1>
     )
   }
 }

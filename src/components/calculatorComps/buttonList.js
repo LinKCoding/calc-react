@@ -1,9 +1,11 @@
 import React from 'react'
-import Button from './CalcButton'
+import CalcButton from './CalcButton'
 
 const ButtonList = (props) => {
   return (
-    <Button />
+    props.chars.map((char, idx) => {
+      return <CalcButton key={`${char}-${idx}`} char={char}/>
+    })
   )
 }
 
