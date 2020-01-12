@@ -12,8 +12,8 @@ export default class Screen extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <h3>[Calculating:{this.topDisplay}]</h3>
-        <h1>[Calculated: ...]</h1>
+        <h3>[Calculating:{this.props.equation}]</h3>
+        <h1>[Calculated: ... {this.props.calculation}]</h1>
       </React.Fragment>
     )
   }
