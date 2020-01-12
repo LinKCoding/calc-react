@@ -1,5 +1,7 @@
 import React from 'react'
 import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button'
+
 
 export default class CalcButton extends React.Component {
   constructor(props) {
@@ -9,7 +11,11 @@ export default class CalcButton extends React.Component {
   render() {
     const { char } = this.props
     return (
-      <Col xs={3} onClick={() => this.props.addToEquation(char)}>{char}</Col>
+      <Col onClick={() => this.props.addToEquation(char)}>
+        <Button variant='info'>
+          {char}
+        </Button>
+      </Col>
     )
   }
 }
