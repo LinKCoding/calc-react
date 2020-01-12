@@ -11,7 +11,7 @@ import Col from 'react-bootstrap/Col'
         <Equation equation={ props.equation }/>
       </Row>
       <Row>
-        <Calculation calculation={props.calculation}/>
+        <Calculation calculation={ props.calculation }/>
       </Row>
     </Col>
   )
