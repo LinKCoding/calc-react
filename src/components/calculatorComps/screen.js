@@ -8,7 +8,7 @@ import Col from 'react-bootstrap/Col'
   return (
     <Col>
       <Row>
-        <Equation equation={ props.equation }/>
+        <Equation equation={ props.equation } handleInput={ props.handleInput }/>
       </Row>
       <Row>
         <Calculation calculation={ props.calculation }/>

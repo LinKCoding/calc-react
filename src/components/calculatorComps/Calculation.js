@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col'
 const Calculation = (props) => {
   return (
     <Col>
-      Calculated: {props.calculation}
+      <span>Calculated:</span> {props.calculation}
     </Col>
   )
 }

@@ -10,7 +10,7 @@ export default class Calculator extends React.Component {
     super(props)
 
     this.state = {
-      chars: ['7', '8', '9', '/', '4', '5', '6', '*', '1', '2', '3', '-', '0', '.', 'C' /* '=' */, '+'],
+      chars: ['7', '8', '9', '/', '4', '5', '6', '*', '1', '2', '3', '-', '.', '0', 'C' /* '=' */, '+'],
       equation: '',
     }
   }
@@ -21,14 +21,25 @@ export default class Calculator extends React.Component {
     })
   }
 
+  handleInput = (e) => {
+    this.setState({
+      equation: e.target.value,
+    })
+  }
+
  
   render() {
     const { equation } = this.state
-    const result = /\d/.test(equation[equation.length-1]) ? eval(equation) : equation
+    let result 
+    try {
+      result = eval(equation)
+    } catch (e) {
+      result = "Invalid equation"
+    }
     return (
-      <Container>
+      <Container style={{ backgroundColor: '#f5f5dc'}}>
         <Row>
-          <Screen equation={equation} calculation={result}/>
+          <Screen equation={equation} handleInput={this.handleInput} calculation={result}/>
         </Row>
         <Row>
           <ButtonList chars={this.state.chars} addToEquation={this.addToEquation}/>
