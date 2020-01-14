@@ -7,7 +7,7 @@ const CalcButton = (props) => {
   const { char } = props
   return (
     <Col onClick={() => props.addToEquation(char)}>
-      <Button variant='info'>
+      <Button style={{margin:'0 auto', width:'50%'}} variant='info'>
         {char}
       </Button>
     </Col>

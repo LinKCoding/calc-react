@@ -37,10 +37,11 @@ export default class Calculator extends React.Component {
       result = "Invalid equation"
     }
     return (
-      <Container style={{ backgroundColor: '#f5f5dc'}}>
+      <Container style={{ backgroundColor: '#f5f5dc', marginTop: '10%'}}>
         <Row>
           <Screen equation={equation} handleInput={this.handleInput} calculation={result}/>
         </Row>
+        <hr></hr>
         <Row>
           <ButtonList chars={this.state.chars} addToEquation={this.addToEquation}/>
         </Row>
