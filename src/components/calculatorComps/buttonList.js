@@ -10,7 +10,7 @@ const ButtonList = (props) => {
   return (
     <Col>
       {sortedButtons.map((row, idx) => {
-        return <ButtonRow key={`${row}-${idx}`} row={row} addToEquation={props.addToEquation} />
+        return <ButtonRow key={`${row}-${idx}`} row={row} addToEquation={props.addToEquation} handleClear={props.handleClear}  />
       })}
     </Col>
   )

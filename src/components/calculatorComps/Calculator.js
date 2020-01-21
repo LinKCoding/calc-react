@@ -21,12 +21,17 @@ export default class Calculator extends React.Component {
     })
   }
 
-  handleInput = (e) => {
+  handleInput = e => {
     this.setState({
       equation: e.target.value,
     })
   }
 
+  handleClear = () => {
+    this.setState({
+      equation: ""
+    })
+  }
  
   render() {
     const { equation } = this.state
@@ -43,7 +48,7 @@ export default class Calculator extends React.Component {
         </Row>
         <hr></hr>
         <Row>
-          <ButtonList chars={this.state.chars} addToEquation={this.addToEquation}/>
+          <ButtonList chars={this.state.chars} addToEquation={this.addToEquation} handleClear={this.handleClear}/>
         </Row>
       </Container>
     )
