@@ -34,10 +34,10 @@ export default class Calculator extends React.Component {
     try {
       result = eval(equation)
     } catch (e) {
-      result = "Invalid equation"
+      result = this.state.equation
     }
     return (
-      <Container style={{ backgroundColor: '#f5f5dc', marginTop: '10%'}}>
+      <Container style={{ backgroundColor: '#f5f5dc', marginTop: '10%', width:'40%'}}>
         <Row>
           <Screen equation={equation} handleInput={this.handleInput} calculation={result}/>
         </Row>

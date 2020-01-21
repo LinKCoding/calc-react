@@ -6,8 +6,8 @@ import Button from 'react-bootstrap/Button'
 const CalcButton = (props) => {
   const { char } = props
   return (
-    <Col onClick={() => props.addToEquation(char)}>
-      <Button style={{margin:'0 auto', width:'50%'}} variant='info'>
+    <Col style={{ margin: '0 auto', width: '50%' }}>
+      <Button style={{ margin: '0 auto', width: '50%' }} variant='info' onClick={() => props.addToEquation(char)}>
         {char}
       </Button>
     </Col>
