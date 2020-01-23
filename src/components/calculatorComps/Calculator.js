@@ -22,9 +22,13 @@ export default class Calculator extends React.Component {
   }
 
   handleInput = e => {
-    this.setState({
-      equation: e.target.value,
-    })
+    const { value } = e.target
+    console.log(value)
+    if(!value.match(/[^\(\)\d+-/* ]/g)) {
+      this.setState({
+        equation: e.target.value,
+      })
+    }
   }
 
   handleClear = () => {
