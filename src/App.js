@@ -1,10 +1,10 @@
 import React from 'react';
-import Overlay from './components/Overlay';
+import MainScreen from './com./components/MainScreen'
 
 function App() {
   return (
     <div className="App">
-      <Overlay />
+      <MainScreen />
     </div>
   );
 }
