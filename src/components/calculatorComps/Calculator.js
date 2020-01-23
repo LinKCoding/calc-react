@@ -23,7 +23,7 @@ export default class Calculator extends React.Component {
 
   handleInput = e => {
     const { value } = e.target
-    if(!value.match(/[^\(\)\d+-/* ]/g)) {
+    if(value.match(/^[\(\)\d+-/* ]+$/g)) {
       this.setState({
         equation: value,
       })
