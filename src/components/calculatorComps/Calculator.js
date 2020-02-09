@@ -3,6 +3,7 @@ import ButtonList from './ButtonList'
 import Screen from './Screen'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
+import CheckInput from '../../helpers/functions'
 
 
 export default class Calculator extends React.Component {
@@ -23,7 +24,7 @@ export default class Calculator extends React.Component {
 
   handleInput = e => {
     const { value } = e.target
-    if(value.match(/^[\(\)\d\+-\/\* ]+$/g)) {
+    if(CheckInput(value)) {
       this.setState({
         equation: value,
       })
