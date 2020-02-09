@@ -10,7 +10,7 @@ export default class Calculator extends React.Component {
     super(props)
 
     this.state = {
-      chars: ['7', '8', '9', '/', '4', '5', '6', '*', '1', '2', '3', '-', '.', '0', 'C' /* '=' */, '+'],
+      chars: ['7', '8', '9', '/', '4', '5', '6', '*', '1', '2', '3', '-', '.', '0', 'C' , '+'],
       equation: '',
     }
   }
@@ -23,7 +23,7 @@ export default class Calculator extends React.Component {
 
   handleInput = e => {
     const { value } = e.target
-    if(value.match(/^[\(\)\d+-\/\* ]+$/g)) {
+    if(value.match(/^[\(\)\d\+-\/\* ]+$/g)) {
       this.setState({
         equation: value,
       })
