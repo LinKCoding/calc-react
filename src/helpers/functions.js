@@ -1,5 +1,5 @@
-const CheckInput = (input) => {
-  return input.match(/^[\(\)\d\+-\/\* ]+$/g) ? input : false
+export const validateInput = (input) => {
+  return Boolean(input.match(/^[\(\)\d\+-\/\* ]+$/g))
 }
 
-export default CheckInput
+// export default ValidateInput
