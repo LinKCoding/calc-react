@@ -10,5 +10,12 @@ test('button displays correct text', () => {
     const { getByText } = render(<CalcButton char={char} />)
 
     expect(getByText(char)).toHaveTextContent(char)
+
+
   })
+
+  // another assertion: give another prop (addToEquation) 
+  // where value of prop is Jest.fn
+  // const const { getByText } = render( <CaclButton ...propr>)
+  // expect(props..adToquation).toHaveBeenCalled() 
 })
