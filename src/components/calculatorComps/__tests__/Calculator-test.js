@@ -24,7 +24,9 @@ test('Calc buttons add to total', () => {
   // fireEvent.click(getByText(secondNum.toString()))
 
   console.log(getByTestId('equation'))
+
   expect(getByTestId('equation')).toHaveTextContent(`${firstNum}`)
+  
   // expect(getByTestId('equation')).toHaveTextContent(`${firstNum}+${secondNum}`)
   
   // const solution = (firstNum + secondNum).toString()
