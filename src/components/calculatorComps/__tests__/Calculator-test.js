@@ -14,22 +14,23 @@ test('All calc buttons are visible', () => {
 // How to test button by button? 
 // Should I give each button an id or a test-attr?
 
-test('Calc buttons add to total', () => {
+test('Calc buttons add to total',  () => {
   const { getByTestId, getByText } = render(<Calculator />)
 
   const firstNum = Math.floor(Math.random() * 9)
-  // const secondNum = Math.floor(Math.random() * 9)
+  const secondNum = Math.floor(Math.random() * 9)
+
   fireEvent.click(getByText(firstNum.toString()))
-  // fireEvent.click(getByText('+'))
-  // fireEvent.click(getByText(secondNum.toString()))
+  fireEvent.click(getByText('+'))
+  fireEvent.click(getByText(secondNum.toString()))
 
-  console.log(getByTestId('equation'))
-
-  expect(getByTestId('equation')).toHaveTextContent(`${firstNum}`)
+  const equation = getByTestId('equation')
   
-  // expect(getByTestId('equation')).toHaveTextContent(`${firstNum}+${secondNum}`)
+  expect(equation.value).toBe(`${firstNum}+${secondNum}`)
   
-  // const solution = (firstNum + secondNum).toString()
-  // expect(getByTestId('calculation')).toHaveTextContent(solution)
+  
+  const solution = (firstNum + secondNum).toString()
+  
+  expect(getByTestId('calculation')).toHaveTextContent(solution)
 })
 
