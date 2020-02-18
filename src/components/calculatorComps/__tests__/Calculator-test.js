@@ -17,6 +17,10 @@ test('All calc buttons are visible', () => {
 test('Calc buttons add to total',  () => {
   const { getByTestId, getByText } = render(<Calculator />)
 
+
+  // How robust should this be?
+  // Do I need to test for each number?
+  // Each operation? 
   const firstNum = Math.floor(Math.random() * 9)
   const secondNum = Math.floor(Math.random() * 9)
 
