@@ -2,6 +2,7 @@ import '@testing-library/jest-dom/extend-expect'
 import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import Calculator from '../Calculator'
+import CalcButton from '../CalcButton'
 
 test('All calc buttons are visible', () => {
   const chars = ['7', '8', '9', '/', '4', '5', '6', '*', '1', '2', '3', '-', '.', '0', 'C', '+']
@@ -38,3 +39,19 @@ test('Calc buttons add to total',  () => {
   expect(getByTestId('calculation')).toHaveTextContent(solution)
 })
 
+
+it('fires the expected callback on click', () => {
+  const props = {
+    char: '3',
+    addToEquation: jest.fn(),
+    handleClear: jest.fn(),
+  };
+  const { getByText } = render(
+    <CalcButton {...props} />
+  );
+  // Simulate the click of the button
+  const button = getByText(props.char)
+  fireEvent.click(button);
+  expect(props.addToEquation).toHaveBeenCalled();
+  expect(props.handleClear).not.toHaveBeenCalled();
+});

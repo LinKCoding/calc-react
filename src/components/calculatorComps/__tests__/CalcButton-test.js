@@ -14,8 +14,6 @@ test('button displays correct text', () => {
 
   })
 
-  // another assertion: give another prop (addToEquation) 
-  // where value of prop is Jest.fn
-  // const const { getByText } = render( <CaclButton ...propr>)
-  // expect(props..adToquation).toHaveBeenCalled() 
+  
 })
+
